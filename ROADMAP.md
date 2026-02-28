@@ -23,7 +23,7 @@ type Generator interface {
 
 **Whack-specific additions:** `pkg/combat` (frame data, hitbox resolution, knockback), `pkg/fighter` (moveset trees, combo logic), `pkg/arena` (platform layout, hazard placement), `pkg/tournament` (bracket, spectator state).
 
-**Binary:** Single `cmd/client` + `cmd/server` binary, no runtime asset directories.
+**Binaries:** Two binaries (`cmd/client`, `cmd/server`), no runtime asset directories.
 
 ---
 
