@@ -28,11 +28,12 @@ type Match struct {
 	Winner  string
 }
 
-// TournamentGenerator generates tournament brackets from a seed.
+// TournamentGenerator generates tournament brackets deterministically from a seed.
 type TournamentGenerator struct{}
 
-// Generate produces a bracket for the given players.
-func (g *TournamentGenerator) Generate(players []string, bracketType BracketType) *Bracket {
+// Generate produces a bracket for the given players using the provided seed for deterministic ordering.
+func (g *TournamentGenerator) Generate(seed int64, players []string, bracketType BracketType) *Bracket {
+	_ = seed // Skeleton: seed will drive deterministic bracket ordering.
 	return &Bracket{
 		Type:    bracketType,
 		Players: players,

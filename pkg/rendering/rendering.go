@@ -23,11 +23,11 @@ func NewSpriteRenderer() *SpriteRenderer {
 
 // PostProcessor applies visual post-processing effects.
 type PostProcessor struct {
-	ScreenShake  bool
-	Scanlines    bool
-	ChromaticAb  bool
-	BloodTint    bool
-	Glow         bool
+	ScreenShake         bool
+	Scanlines           bool
+	ChromaticAberration bool
+	BloodTint           bool
+	Glow                bool
 }
 
 // NewPostProcessor creates a new post-processor.
