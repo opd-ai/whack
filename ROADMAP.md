@@ -152,7 +152,7 @@ type Generator interface {
 
 | Indicator | Target | Measurement Method |
 |---|---|---|
-| Zero embedded assets | 0 image/audio/data files in repo | `find . -name "*.png" -o -name "*.wav" -o -name "*.json"` returns empty |
+| Zero embedded assets | 0 image/audio/data files in repo | `find . -path ./.git -prune -o -type f \( -name "*.png" -o -name "*.wav" -o -name "*.ogg" -o -name "*.mp3" -o -name "*.json" -o -name "*.ttf" -o -name "*.glb" \)` returns empty and `git grep -n "//go:embed"` returns no matches |
 | Deterministic PCG | Identical output for same seed+genre | 1000-run hash comparison in CI |
 | Combat frame accuracy | Hitbox resolution error 0 frames at 60 Hz local | Automated frame-step test harness |
 | Netcode at 200 ms RTT | <2 frame visual stutter | Network simulator test with tc netem |
