@@ -120,7 +120,7 @@ type Generator interface {
 
 ## 5. Multiplayer Design
 
-**Input Synchronization:** Clients send timestamped input frames (8-byte: frame#, buttons, stick X/Y) at 60 Hz. Server buffers 1–3 frames and simulates authoritatively. Input delay is adaptive: min 2 frames at <50 ms, scales to 8 frames at >500 ms.
+**Input Synchronization:** Clients send timestamped input frames encoded as a fixed 8-byte struct: `uint32` frame index (timestamp derived from frame at 60 Hz, no separate timestamp field), `uint16` button bitmask, `int8` stick X, and `int8` stick Y. Server buffers 1–3 frames and simulates authoritatively. Input delay is adaptive: min 2 frames at <50 ms, scales to 8 frames at >500 ms.
 
 **Rollback Netcode (high-latency adaptation):** Client predicts up to 300 frames; on server reconciliation mismatch, replays from divergence point. State snapshot ring-buffer (300 frames × ~4 KB = ~1.2 MB per client). At >2000 ms latency (Tor), switches to interpolation-only mode with deferred input confirmation.
 
