@@ -8,7 +8,7 @@ Whack is a 100% procedurally generated arena combat game built in Go 1.24+ with 
 
 ## 2. Core Architecture
 
-**ECS:** Entities are uint64 IDs. Components (`HitboxComponent`, `FighterStatsComponent`, `PositionComponent`, etc.) are pure data structs stored in typed slices. Systems (`PhysicsSystem`, `CombatSystem`, `NetworkSyncSystem`) contain all logic and iterate over component arrays.
+**ECS:** Entities are uint64 IDs, but component storage is densely indexed: each component type maintains a packed slice plus an entity→dense-index map (sparse-set style). Components (`HitboxComponent`, `FighterStatsComponent`, `PositionComponent`, etc.) are pure data structs in these slices, and systems (`PhysicsSystem`, `CombatSystem`, `NetworkSyncSystem`) contain all logic and iterate over the dense component arrays.
 
 **PCG Interface (inherited from V-Series):**
 ```go
