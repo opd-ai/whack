@@ -96,8 +96,8 @@ type Generator interface {
     - **AC:** No generated fighter wins >65% of matches vs. random opponents across 10k games.
 22. 1v1, FFA (up to 4 players), team battle (2v2) mode support; mode selection in server config.
     - **AC:** All three modes complete without desync across 100 test sessions.
-23. Single binary build: `go build -tags netgo -ldflags "-extldflags -static"` for client and server; verify no runtime asset loading.
-    - **AC:** Binary runs on clean system with no game assets present; `ldd` shows statically linked.
+23. Single-binary, self-contained release: build client and server for supported targets (e.g., Linux, Windows, macOS, 64-bit) with no runtime asset directories; prefer static or minimally dynamic linking per-platform where supported.
+    - **AC:** For each supported target, the packaged binary starts and runs on a clean system without requiring separate game asset files/directories; no runtime file loads outside config/save/log paths.
 
 ---
 
