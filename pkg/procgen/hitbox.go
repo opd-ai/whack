@@ -7,7 +7,7 @@ type HitboxData struct {
 
 // HitboxShape represents a hitbox shape for a move.
 type HitboxShape struct {
-	X, Y, W, H  float64
+	X, Y, W, H   float64
 	ActiveFrames int
 }
 

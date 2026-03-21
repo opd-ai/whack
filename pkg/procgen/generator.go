@@ -7,10 +7,10 @@ import "fmt"
 type GenreID string
 
 const (
-	GenreFantasy       GenreID = "fantasy"
-	GenreSciFi         GenreID = "sci-fi"
-	GenreHorror        GenreID = "horror"
-	GenreCyberpunk     GenreID = "cyberpunk"
+	GenreFantasy         GenreID = "fantasy"
+	GenreSciFi           GenreID = "sci-fi"
+	GenreHorror          GenreID = "horror"
+	GenreCyberpunk       GenreID = "cyberpunk"
 	GenrePostApocalyptic GenreID = "post-apocalyptic"
 )
 

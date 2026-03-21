@@ -11,7 +11,7 @@ type Arena struct {
 // Platform represents a platform in the arena.
 type Platform struct {
 	X, Y, W, H float64
-	Moving      bool
+	Moving     bool
 }
 
 // Hazard represents an arena hazard.

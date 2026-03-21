@@ -86,8 +86,8 @@ type PositionComponent struct {
 // HitboxComponent stores active attack hitbox data.
 type HitboxComponent struct {
 	X, Y, W, H float64
-	Damage      float64
-	Active      bool
+	Damage     float64
+	Active     bool
 }
 
 // HurtboxComponent stores vulnerable area data.
